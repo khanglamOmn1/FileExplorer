@@ -201,7 +201,7 @@ private class TriggerHandler_Test {
 
     @isTest
     static void testVirtualMethods() {
-        TriggerHandler h = new TriggerHandler();
+        TriggerHandlerFile h = new TriggerHandlerFile();
         h.beforeInsert();
         h.beforeUpdate();
         h.beforeDelete();

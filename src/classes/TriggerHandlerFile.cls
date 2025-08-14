@@ -7,7 +7,7 @@
     TODO:
  */
 
-global virtual inherited sharing class TriggerHandler {
+global virtual inherited sharing class TriggerHandlerFile {
 
     // static map of handlername, times run() was invoked
     private static Map<String, LoopCount> loopCountMap;

@@ -5,6 +5,7 @@
     <types>
         <members>TriggerHandler</members>
         <members>TriggerHandler_Test</members>
+        <members>qsyd_FileExplorerCommon</members>
         <members>qsydFileExplorerController</members>
         <members>qsydFileExplorerControllerTest</members>
         <members>qsydFileExplorerTest</members>

@@ -56,6 +56,8 @@
         <members>FileExplorerFolder__c.Label__c</members>
         <members>FileExplorerFolder__c.LinkedEntityId__c</members>
         <members>FileExplorerFolder__c.TemplateFolderId__c</members>
+        <members>Lightning_File_Explorer__mdt.Enable__c</members>
+        <members>Lightning_File_Explorer__mdt.All_Fields</members>
         <name>CustomField</name>
     </types>
     <types>
@@ -150,6 +152,7 @@
         <members>FileExplorerFile__c</members>
         <members>FileExplorerFolderTemplate__c</members>
         <members>FileExplorerFolder__c</members>
+        <members>Lightning_File_Explorer__mdt</members>
         <name>CustomObject</name>
     </types>
     <types>
@@ -212,15 +215,6 @@
         <members>qsyd_Common</members>
         <members>qsyd_Mockups</members>
         <name>StaticResource</name>
-    </types>
-        <types>
-        <members>Lightning_File_Explorer__mdt</members>
-        <name>CustomObject</name>
-    </types>
-    <types>
-        <members>Lightning_File_Explorer__mdt.Enable__c</members>
-        <members>Lightning_File_Explorer__mdt.All_Fields</members>
-        <name>CustomField</name>
     </types>
     <types>
         <members>Lightning_File_Explorer.Settings</members>

@@ -223,47 +223,47 @@ export default class QsydFileExplorerCmp extends LightningElement {
 
 	handleDataLoaded(e) {
 
-		switch (this.action) {
-			case CONSTANTS.ACTION_TYPES.ADD_FILE:
-				this.results = this.findTreeItem(this.dataDictionary,
-					'Contents',
-					this.folderId);
-				break;
+		// switch (this.action) {
+		// 	case CONSTANTS.ACTION_TYPES.ADD_FILE:
+		// 		this.results = this.findTreeItem(this.dataDictionary,
+		// 			'Contents',
+		// 			this.folderId);
+		// 		break;
 
-			case CONSTANTS.ACTION_TYPES.UPDATE_FILE:
-			case CONSTANTS.ACTION_TYPES.DELETE_FILE:
-			case CONSTANTS.ACTION_TYPES.ADD_FOLDER:
-			case CONSTANTS.ACTION_TYPES.MOVE_FOLDER:
-			case CONSTANTS.ACTION_TYPES.RENAME_FOLDER:
-			case CONSTANTS.ACTION_TYPES.DELETE_FOLDER:
-				this.item = this.findItemInSet(this.shadowItem) || new item();
-				break;
-			// case CONSTANTS.ACTION_TYPES.UPDATE_FILE:
-			// 	this.item = this.findItemInSet(this.shadowItem) || new item();
-			// 	break;
-			//
-			// case CONSTANTS.ACTION_TYPES.DELETE_FILE:
-			// 	this.item = this.findItemInSet(this.shadowItem) || new item();
-			// 	break;
-			//
-			// case CONSTANTS.ACTION_TYPES.ADD_FOLDER:
-			// 	this.item = this.findItemInSet(this.shadowItem) || new item();
-			// 	break;
-			//
-			// case CONSTANTS.ACTION_TYPES.MOVE_FOLDER:
-			// 	this.item = this.findItemInSet(this.shadowItem) || new item();
-			// 	break;
-			//
-			// case CONSTANTS.ACTION_TYPES.RENAME_FOLDER:
-			// 	this.item = this.findItemInSet(this.shadowItem) || new item();
-			// 	break;
-			//
-			// case CONSTANTS.ACTION_TYPES.DELETE_FOLDER:
-			// 	this.item = this.findItemInSet(this.shadowItem) || new item();
+		// 	case CONSTANTS.ACTION_TYPES.UPDATE_FILE:
+		// 	case CONSTANTS.ACTION_TYPES.DELETE_FILE:
+		// 	case CONSTANTS.ACTION_TYPES.ADD_FOLDER:
+		// 	case CONSTANTS.ACTION_TYPES.MOVE_FOLDER:
+		// 	case CONSTANTS.ACTION_TYPES.RENAME_FOLDER:
+		// 	case CONSTANTS.ACTION_TYPES.DELETE_FOLDER:
+		// 		this.item = this.findItemInSet(this.shadowItem) || new item();
+		// 		break;
+		// 	// case CONSTANTS.ACTION_TYPES.UPDATE_FILE:
+		// 	// 	this.item = this.findItemInSet(this.shadowItem) || new item();
+		// 	// 	break;
+		// 	//
+		// 	// case CONSTANTS.ACTION_TYPES.DELETE_FILE:
+		// 	// 	this.item = this.findItemInSet(this.shadowItem) || new item();
+		// 	// 	break;
+		// 	//
+		// 	// case CONSTANTS.ACTION_TYPES.ADD_FOLDER:
+		// 	// 	this.item = this.findItemInSet(this.shadowItem) || new item();
+		// 	// 	break;
+		// 	//
+		// 	// case CONSTANTS.ACTION_TYPES.MOVE_FOLDER:
+		// 	// 	this.item = this.findItemInSet(this.shadowItem) || new item();
+		// 	// 	break;
+		// 	//
+		// 	// case CONSTANTS.ACTION_TYPES.RENAME_FOLDER:
+		// 	// 	this.item = this.findItemInSet(this.shadowItem) || new item();
+		// 	// 	break;
+		// 	//
+		// 	// case CONSTANTS.ACTION_TYPES.DELETE_FOLDER:
+		// 	// 	this.item = this.findItemInSet(this.shadowItem) || new item();
 
-			default:
-				break;
-		}
+		// 	default:
+		// 		break;
+		// }
 	}
 
 	handleExplorerLoaded(e) {

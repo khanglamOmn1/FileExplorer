@@ -3,7 +3,7 @@
     <fullName>Lightning File Explorer</fullName>
     <apiAccessLevel>Unrestricted</apiAccessLevel>
     <types>
-        <members>TriggerHandler</members>
+        <members>TriggerHandlerFile</members>
         <members>TriggerHandler_Test</members>
         <members>qsyd_FileExplorerCommon</members>
         <members>qsydFileExplorerController</members>

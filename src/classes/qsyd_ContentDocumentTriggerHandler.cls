@@ -14,7 +14,7 @@
     TODO:
  */
 
-public without sharing class qsyd_ContentDocumentTriggerHandler extends TriggerHandler {
+public without sharing class qsyd_ContentDocumentTriggerHandler extends TriggerHandlerFile {
     public final String SHARE_TYPE_VIEWER = 'V';
     public final String SHARE_TYPE_COLLABORATOR = 'C';
     public final String SHARE_TYPE_INFERRED = 'I';

@@ -82,7 +82,7 @@ private class TriggerHandler_Test {
         try{
             handler.run();
             System.assert(false, 'the handler ran but should have thrown');
-        } catch(TriggerHandler.TriggerHandlerException te) {
+        } catch(TriggerHandlerFile.TriggerHandlerException te) {
             System.assertEquals(TRIGGER_CONTEXT_ERROR, te.getMessage(), 'the exception message should match');
         } catch(Exception e) {
             System.assert(false, 'the exception thrown was not expected: ' + e.getTypeName() + ': ' + e.getMessage());
@@ -96,31 +96,31 @@ private class TriggerHandler_Test {
         afterUpdateMode();
 
         // test a bypass and run handler
-        TriggerHandler.bypass('TestHandler');
+        TriggerHandlerFile.bypass('TestHandler');
         handler.run();
         System.assertEquals(null, lastMethodCalled, 'last method should be null when bypassed');
-        System.assertEquals(true, TriggerHandler.isBypassed('TestHandler'), 'test handler should be bypassed');
+        System.assertEquals(true, TriggerHandlerFile.isBypassed('TestHandler'), 'test handler should be bypassed');
         resetTest();
 
         // clear that bypass and run handler
-        TriggerHandler.clearBypass('TestHandler');
+        TriggerHandlerFile.clearBypass('TestHandler');
         handler.run();
         System.assertEquals('afterUpdate', lastMethodCalled, 'last method called should be afterUpdate');
-        System.assertEquals(false, TriggerHandler.isBypassed('TestHandler'), 'test handler should be bypassed');
+        System.assertEquals(false, TriggerHandlerFile.isBypassed('TestHandler'), 'test handler should be bypassed');
         resetTest();
 
         // test a re-bypass and run handler
-        TriggerHandler.bypass('TestHandler');
+        TriggerHandlerFile.bypass('TestHandler');
         handler.run();
         System.assertEquals(null, lastMethodCalled, 'last method should be null when bypassed');
-        System.assertEquals(true, TriggerHandler.isBypassed('TestHandler'), 'test handler should be bypassed');
+        System.assertEquals(true, TriggerHandlerFile.isBypassed('TestHandler'), 'test handler should be bypassed');
         resetTest();
 
         // clear all bypasses and run handler
-        TriggerHandler.clearAllBypasses();
+        TriggerHandlerFile.clearAllBypasses();
         handler.run();
         System.assertEquals('afterUpdate', lastMethodCalled, 'last method called should be afterUpdate');
-        System.assertEquals(false, TriggerHandler.isBypassed('TestHandler'), 'test handler should be bypassed');
+        System.assertEquals(false, TriggerHandlerFile.isBypassed('TestHandler'), 'test handler should be bypassed');
         resetTest();
     }
 
@@ -144,7 +144,7 @@ private class TriggerHandler_Test {
             // try running it. This should exceed the limit.
             handler.run();
             System.assert(false, 'the handler should throw on the 3rd run when maxloopcount is 3');
-        } catch(TriggerHandler.TriggerHandlerException te) {
+        } catch(TriggerHandlerFile.TriggerHandlerException te) {
             // we're expecting to get here
             System.assertEquals(null, lastMethodCalled, 'last method should be null');
         } catch(Exception e) {
@@ -161,7 +161,7 @@ private class TriggerHandler_Test {
             // re-run the handler. We shouldn't throw now.
             handler.run();
             System.assertEquals('beforeInsert', lastMethodCalled, 'last method should be beforeInsert');
-        } catch(TriggerHandler.TriggerHandlerException te) {
+        } catch(TriggerHandlerFile.TriggerHandlerException te) {
             System.assert(false, 'running the handler after clearing the loop count should not throw');
         } catch(Exception e) {
             System.assert(false, 'the exception thrown was not expected: ' + e.getTypeName() + ': ' + e.getMessage());
@@ -170,7 +170,7 @@ private class TriggerHandler_Test {
 
     @isTest
     static void testLoopCountClass() {
-        TriggerHandler.LoopCount lc = new TriggerHandler.LoopCount();
+        TriggerHandlerFile.LoopCount lc = new TriggerHandlerFile.LoopCount();
         System.assertEquals(5, lc.getMax(), 'max should be five on init');
         System.assertEquals(0, lc.getCount(), 'count should be zero on init');
 
@@ -251,7 +251,7 @@ private class TriggerHandler_Test {
 
     // test implementation of the TriggerHandler
 
-    private class TestHandler extends TriggerHandler {
+    private class TestHandler extends TriggerHandlerFile {
 
         public override void beforeInsert() {
             TriggerHandler_Test.lastMethodCalled = 'beforeInsert';

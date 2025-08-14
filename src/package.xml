@@ -213,5 +213,18 @@
         <members>qsyd_Mockups</members>
         <name>StaticResource</name>
     </types>
+        <types>
+        <members>Lightning_File_Explorer__mdt</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Lightning_File_Explorer__mdt.Enable__c</members>
+        <members>Lightning_File_Explorer__mdt.All_Fields</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Lightning_File_Explorer.Settings</members>
+        <name>CustomMetadata</name>
+    </types>
     <version>51.0</version>
 </Package>

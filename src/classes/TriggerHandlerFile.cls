@@ -28,7 +28,7 @@ global virtual inherited sharing class TriggerHandlerFile {
     }
 
     // constructor
-    public TriggerHandler() {
+    public TriggerHandlerFile() {
         this.setTriggerContext();
     }
 
@@ -63,10 +63,10 @@ global virtual inherited sharing class TriggerHandlerFile {
 
     public void setMaxLoopCount(Integer max) {
         String handlerName = getHandlerName();
-        if (!TriggerHandler.loopCountMap.containsKey(handlerName)) {
-            TriggerHandler.loopCountMap.put(handlerName, new LoopCount(max));
+        if (!TriggerHandlerFile.loopCountMap.containsKey(handlerName)) {
+            TriggerHandlerFile.loopCountMap.put(handlerName, new LoopCount(max));
         } else {
-            TriggerHandler.loopCountMap.get(handlerName).setMax(max);
+            TriggerHandlerFile.loopCountMap.get(handlerName).setMax(max);
         }
     }
 
@@ -79,19 +79,19 @@ global virtual inherited sharing class TriggerHandlerFile {
      ***************************************/
 
     public static void bypass(String handlerName) {
-        TriggerHandler.bypassedHandlers.add(handlerName);
+        TriggerHandlerFile.bypassedHandlers.add(handlerName);
     }
 
     public static void clearBypass(String handlerName) {
-        TriggerHandler.bypassedHandlers.remove(handlerName);
+        TriggerHandlerFile.bypassedHandlers.remove(handlerName);
     }
 
     public static Boolean isBypassed(String handlerName) {
-        return TriggerHandler.bypassedHandlers.contains(handlerName);
+        return TriggerHandlerFile.bypassedHandlers.contains(handlerName);
     }
 
     public static void clearAllBypasses() {
-        TriggerHandler.bypassedHandlers.clear();
+        TriggerHandlerFile.bypassedHandlers.clear();
     }
 
     /***************************************
@@ -140,10 +140,10 @@ global virtual inherited sharing class TriggerHandlerFile {
     @TestVisible
     private void addToLoopCount() {
         String handlerName = getHandlerName();
-        if (TriggerHandler.loopCountMap.containsKey(handlerName)) {
-            Boolean exceeded = TriggerHandler.loopCountMap.get(handlerName).increment();
+        if (TriggerHandlerFile.loopCountMap.containsKey(handlerName)) {
+            Boolean exceeded = TriggerHandlerFile.loopCountMap.get(handlerName).increment();
             if (exceeded) {
-                Integer max = TriggerHandler.loopCountMap.get(handlerName).max;
+                Integer max = TriggerHandlerFile.loopCountMap.get(handlerName).max;
                 throw new TriggerHandlerException('Maximum loop count of ' + String.valueOf(max) + ' reached in ' + handlerName);
             }
         }
@@ -155,7 +155,7 @@ global virtual inherited sharing class TriggerHandlerFile {
         if (!this.isTriggerExecuting || this.context == null) {
             throw new TriggerHandlerException('Trigger handler called outside of Trigger execution');
         }
-        if (TriggerHandler.bypassedHandlers.contains(getHandlerName())) {
+        if (TriggerHandlerFile.bypassedHandlers.contains(getHandlerName())) {
             return false;
         }
         return true;

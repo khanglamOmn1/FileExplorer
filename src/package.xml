@@ -57,7 +57,6 @@
         <members>FileExplorerFolder__c.LinkedEntityId__c</members>
         <members>FileExplorerFolder__c.TemplateFolderId__c</members>
         <members>Lightning_File_Explorer__mdt.Enable__c</members>
-        <members>Lightning_File_Explorer__mdt.All_Fields</members>
         <name>CustomField</name>
     </types>
     <types>
